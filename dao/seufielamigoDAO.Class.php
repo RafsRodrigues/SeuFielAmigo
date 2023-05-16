@@ -28,7 +28,7 @@ class consultaDAO
 
             $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            var_dump($rs);
+            echo json_encode($rs);
 
             return $rs;
         } catch (PDOException $erro) {
