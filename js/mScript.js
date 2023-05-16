@@ -160,7 +160,7 @@ $(function () {
       success: function (data) {
         if (data == "true") {
           alert("Animal cadastrado com sucesso!");
-          window.location.href = "/seufielamigo/cadastros.php";
+          window.location.href = "cadastros.php";
         } else {
           alert("Erro ao cadastrar: " + data);
         }

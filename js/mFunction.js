@@ -60,7 +60,7 @@ function entrar(email, senha) {
             console.log(data);
             if (data == "true") {
                 clearInput();
-                window.location.href = "/seufielamigo/index.php";
+                window.location.href = "index.php";
             } else {
                 alert(data);
             }
