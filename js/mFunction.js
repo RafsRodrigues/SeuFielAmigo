@@ -76,49 +76,56 @@ function clearInput() {
 
 function preencheAnuncios() {
 
-    $.ajax({
+    if($(".numIdUser").val()){
+        $.ajax({
 
-        type: "POST",
-        url: controller,
-        data: 'action=pesquisarAnuncios' + '&numIdUser=' + $(".numIdUser").val(),
+            type: "POST",
+            url: controller,
+            data: 'action=pesquisarAnuncios' + '&numIdUser=' + $(".numIdUser").val(),
+    
+            success: function (retorno) {
 
-        success: function (retorno) {
+                if (retorno == "[]") {
+                    $('#listAnuncios').html("<center>Ops! Nenhum pet encontrado. :'( </center>");
+                    return false;
+                }else{
+                    $.ajax({
+                        type: "POST",
+                        url: "tmp/list-Anuncios.php",
+                        data: 'obj=' + retorno,
+        
+                        success: function (data) {
+        
+                            $('#listAnuncios').html(data);
+        
+                        }
+        
+                    });
+                }
+           
+                var obj = JSON.parse(retorno)
+    
+                var texto = "";
+    
+                obj.forEach(function (item) {
+    
+                    if (item.strAprovacao == null) {
+                        texto += `<center>• ${item.strTitulo}</center><br>`;
+                    }
+    
+                });
 
-            var obj = JSON.parse(retorno)
-
-            var texto = "";
-
-            obj.forEach(function (item) {
-
-                if (item.strAprovacao == null) {
-                    texto += `<center>• ${item.strTitulo}</center><br>`;
+                if(texto){
+                    $('#mensagemAnalise').html(`<center>Aguarde! Anúncio(s) em análise:</center><br>${texto}`);
                 }
 
-            });
-
-            $('#mensagemAnalise').html(`<center>Aguarde! Anúncio(s) em análise:</center><br>${texto}`);
-
-            if (retorno == "[]") {
-                $('#listAnuncios').html("<center>Ops! Nenhum pet encontrado. :'( </center>");
-                return false;
+    
             }
+    
+        });
+    }
 
-            $.ajax({
-                type: "POST",
-                url: "tmp/list-Anuncios.php",
-                data: 'obj=' + retorno,
-
-                success: function (data) {
-
-                    $('#listAnuncios').html(data);
-
-                }
-
-            });
-
-        }
-
-    });
+    
 }
 
 function preencheAnunciosAdm(filtro) {

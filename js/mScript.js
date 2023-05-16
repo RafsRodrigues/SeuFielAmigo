@@ -1,6 +1,7 @@
 var controller = "controller/controlador.php";
 
 $(function () {
+  
 
   $(".linkAdm").hide();
 
