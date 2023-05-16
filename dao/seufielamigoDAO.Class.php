@@ -2,7 +2,7 @@
 session_start();
 
 
-require_once("connection/conexao.php");
+require_once("./connection/conexao.php");
 
 class consultaDAO
 {
