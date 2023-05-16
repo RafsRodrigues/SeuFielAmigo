@@ -2,7 +2,7 @@
 
 extract($_POST);
 
-require_once("./dao/seufielamigoDAO.Class.php");
+require_once("../dao/seufielamigoDAO.Class.php");
 
 
 switch ($action) {
