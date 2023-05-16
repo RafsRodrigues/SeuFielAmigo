@@ -1,4 +1,4 @@
-var controller = "controller/controlador.php";
+var controller = "./controller/controlador.php";
 
 $(function () {
   
