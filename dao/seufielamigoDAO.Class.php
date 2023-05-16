@@ -22,11 +22,13 @@ class consultaDAO
         try {
             $sql = "SELECT * from estado order by Nome, Uf asc";
 
-            echo $sql;
+          
 
             $stmt = $this->pdo->query($sql);
 
             $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            var_dump($rs);
 
             return $rs;
         } catch (PDOException $erro) {
