@@ -45,7 +45,7 @@ function enviarCadastro(nome, email, senha) {
             console.log(data);
             clearInput();
             entrar(email, senha);
-            // window.location.href = "/seufielamigo/view/index.php";
+            // window.location.href = "/seufielamigo/index.php";
         }
     })
 }
@@ -60,7 +60,7 @@ function entrar(email, senha) {
             console.log(data);
             if (data == "true") {
                 clearInput();
-                window.location.href = "/seufielamigo/view/index.php";
+                window.location.href = "/seufielamigo/index.php";
             } else {
                 alert(data);
             }

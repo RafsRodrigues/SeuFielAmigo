@@ -1,4 +1,4 @@
-var controller = "../controller/controlador.php";
+var controller = "controller/controlador.php";
 
 $(function () {
 
@@ -159,7 +159,7 @@ $(function () {
       success: function (data) {
         if (data == "true") {
           alert("Animal cadastrado com sucesso!");
-          window.location.href = "/seufielamigo/view/cadastros.php";
+          window.location.href = "/seufielamigo/cadastros.php";
         } else {
           alert("Erro ao cadastrar: " + data);
         }

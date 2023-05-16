@@ -4,5 +4,5 @@ if (!isset($_SESSION)) {
   session_start();
 }
 if(!isset($_SESSION['id'])){
-  header('Location: ../view/login.php');
+  header('Location: ../seufielamigo/login.php');
 }

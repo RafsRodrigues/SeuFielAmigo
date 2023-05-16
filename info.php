@@ -1,5 +1,5 @@
 <?php
-require_once("../connection/conexao.php");
+require_once("connection/conexao.php");
 $cn = new ConnectionFactory();
 $pdo = $cn->getConnect_seuFielAmigo();
 
@@ -40,7 +40,7 @@ $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <?php require_once('header.php'); ?>
 
 <div class="div_link_back">
-  <a class="link_back" href="/seufielamigo/view/index.php"><i class="uil uil-arrow-left"></i>Voltar</a>
+  <a class="link_back" href="/seufielamigo/index.php"><i class="uil uil-arrow-left"></i>Voltar</a>
 </div>
 <br>
 

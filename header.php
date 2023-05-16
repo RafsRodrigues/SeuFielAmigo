@@ -24,7 +24,7 @@
     <?php } ?>
 
     <nav>
-      <a class="logo" href="/seufielamigo/view/index.php"> <img src="img/simbolo2.png" style="width: 220px; margin-top:25px;" alt=""></a>
+      <a class="logo" href="/seufielamigo/index.php"> <img src="img/simbolo2.png" style="width: 220px; margin-top:25px;" alt=""></a>
       <div class="mobile-menu">
         <div class="line1"></div>
         <div class="line2"></div>
