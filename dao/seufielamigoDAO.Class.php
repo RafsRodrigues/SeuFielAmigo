@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+echo "cheguei porra";
 
 require_once("../connection/conexao.php");
 
@@ -21,6 +21,8 @@ class consultaDAO
 
         try {
             $sql = "SELECT * from estado order by Nome, Uf asc";
+
+          
 
             $stmt = $this->pdo->query($sql);
 
