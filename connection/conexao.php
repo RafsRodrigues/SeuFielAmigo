@@ -3,10 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-// $servername = "localhost";
-// $database = "db_seufielamigo";
-// $username = "root";
-// $password = "";
+
 // Create connection
 
 // $conn = new mysqli($servername, $username, $password, $database);
@@ -30,10 +27,16 @@ class ConnectionFactory{
   //   }
   //   return $pdo;
   // }
+ 
 
   public function getConnect_seuFielAmigo(){
     try{
-      $pdo = new PDO('mysql:host=us-cdbr-east-06.cleardb.net;dbname=heroku_00697f4a8bd282b', 'bac941f85fad3e', '486678ad');
+      $servername = "us-cdbr-east-06.cleardb.net";
+      $database = "heroku_00697f4a8bd282b";
+      $username = "bac941f85fad3e";
+      $password = "486678ad";
+
+      $pdo = new PDO('mysql:host='.$servername.';dbname='.$database.'', $username, $password);
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }catch(PDOException $e){
       print "Error!:" . $e->getMessage() . "<br/>";
