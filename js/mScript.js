@@ -199,7 +199,7 @@ $(function () {
       success: function (data) {
         if (data == "true") {
           alert("Animal aprovado com sucesso!");
-          preencheAnunciosAdm();
+          preencheAnunciosAdm($("#strPedidos option:selected").val());
         } else {
           alert("Erro ao excluir: " + data);
         }
@@ -217,7 +217,7 @@ $(function () {
       success: function (data) {
         if (data == "true") {
           alert("Animal reprovado com sucesso!");
-          preencheAnunciosAdm();
+          preencheAnunciosAdm($("#strPedidos option:selected").val());
         } else {
           alert("Erro ao excluir: " + data);
         }
