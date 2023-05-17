@@ -79,7 +79,7 @@ $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <div class="infos_pet_clock">
           <span><i class="uil uil-clock"></i> Publicado em:</span>
-          <span style="color:black;font-size:15px"><?php echo inverteData($obj['dtLog']); ?></span>
+          <span style="color:black;font-size:15px"><?php echo date('d-m-Y', strtotime($obj['dtLog'])); ?></span>
         </div>
   
       </div>
@@ -103,13 +103,6 @@ $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <?php require_once('footer.php'); 
 
-function inverteData($data){
-  if(count(explode("/",$data)) > 1){
-      return implode("-",array_reverse(explode("/",$data)));
-  }elseif(count(explode("-",$data)) > 1){
-      return implode("/",array_reverse(explode("-",$data)));
-  }
-}
 
 
 ?>
