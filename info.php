@@ -25,8 +25,8 @@ if ($_SESSION) {
 
 
 $sql = "SELECT * FROM cadastro_pet cp 
-inner join cadastro_user cu on cu.numIdUser = cp.numIdUser 
-inner join bairro b on b.Codigo = cp.strBairro
+left join cadastro_user cu on cu.numIdUser = cp.numIdUser 
+left join bairro b on b.Codigo = cp.strBairro
 where numIdPet = " . $_GET['id'];
 
 $stmt = $pdo->query($sql);
