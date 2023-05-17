@@ -31,7 +31,7 @@ where numIdPet = " . $_GET['id'];
 
 $stmt = $pdo->query($sql);
 
-$rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$rs = $stmt->fetchAll(PDO::FETCH_OBJ);
 
 
 ?>
