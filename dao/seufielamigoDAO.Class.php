@@ -48,7 +48,7 @@ class consultaDAO
 
             $stmt = $this->pdo->query($sql);
 
-            $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $rs = $stmt->fetchAll(PDO::FETCH_OBJ);
 
             return $rs;
         } catch (PDOException $erro) {
