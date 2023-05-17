@@ -50,7 +50,7 @@ switch ($action) {
 			if (is_array($rs) || $rs == 'true' || $rs == '1') {
 				echo json_encode($rs);
 			} else {
-				header("HTTP/1.0 500 Internal Server Error");
+				// header("HTTP/1.0 500 Internal Server Error");
 				//echo $rs;
 				die('Tivemos o seguinte problema: ' . $rs);
 			}
