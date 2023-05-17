@@ -25,7 +25,7 @@ session_start();
 ?>
     <div class="animal_card">
         <div class="div_foto_animal_card">
-            <a href="info.php?id=<?php echo $obj->numIdPet; ?>"><img class="foto_animal_card" src="<?php echo $caminhoFoto; ?>" alt=""></a>
+            <a href="./info.php?id=<?php echo $obj->numIdPet; ?>"><img class="foto_animal_card" src="<?php echo $caminhoFoto; ?>" alt=""></a>
             <span class="<?php echo $classGenero; ?>"><?php echo $obj->strTitulo; ?></span>
             <br>
             <span class="animal_sex"><i class="uil <?php echo $iconGereno; ?> iconSex"></i></span>
