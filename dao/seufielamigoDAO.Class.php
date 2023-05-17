@@ -62,16 +62,28 @@ class consultaDAO
     {
         try {
 
-
-            $senhaCrip = password_hash($senha, PASSWORD_DEFAULT);
-
-            $sql = "INSERT INTO cadastro_user (strNome,strEmail, strSenha, dtLog, strPerfil) values ('$nome','$email','$senhaCrip',now(), 'Usuario')";
+            $sql = "select * from cadastro_user where strEmail = '$email'";
 
             $stmt = $this->pdo->prepare($sql);
-
             $stmt->execute();
 
-            return true;
+            $usuario = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            if ($usuario) {
+                return "Email já cadastrado!";
+            }else{
+                $senhaCrip = password_hash($senha, PASSWORD_DEFAULT);
+
+                $sql = "INSERT INTO cadastro_user (strNome,strEmail, strSenha, dtLog, strPerfil) values ('$nome','$email','$senhaCrip',now(), 'Usuario')";
+    
+                $stmt = $this->pdo->prepare($sql);
+    
+                $stmt->execute();
+    
+                return true;
+            }  
+
+
         } catch (PDOException $erro) {
             return $erro->getMessage() . " - " . $erro->getCode();
         }

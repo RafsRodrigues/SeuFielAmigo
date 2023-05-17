@@ -45,9 +45,13 @@ function enviarCadastro(nome, email, senha) {
         data: "action=cadastrarLogin&nome=" + nome + "&email=" + email + "&senha=" + senha,
         success: function (data) {
             console.log(data);
-            clearInput();
-            entrar(email, senha);
-            // window.location.href = "/seufielamigo/index.php";
+            if (data == "true") {
+                clearInput();
+                entrar(email, senha);
+            } else {
+                alert(data);
+            }
+
         }
     })
 }
