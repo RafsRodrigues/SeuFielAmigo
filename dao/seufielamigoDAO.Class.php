@@ -1,7 +1,5 @@
 <?php
-setlocale(LC_ALL,'pt_BR.UTF8');
-mb_internal_encoding('UTF8'); 
-mb_regex_encoding('UTF8');
+
 session_start();
 
 

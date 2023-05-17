@@ -1,7 +1,4 @@
 <?php
-setlocale(LC_ALL,'pt_BR.UTF8');
-mb_internal_encoding('UTF8'); 
-mb_regex_encoding('UTF8');
 
 extract($_POST);
 
@@ -18,7 +15,7 @@ switch ($action) {
 
 
 			if (is_array($rs) || $rs == 'true' || $rs == '1') {
-				echo json_encode($rs);
+				echo $rs;
 			} else {
 				header("HTTP/1.0 500 Internal Server Error");
 				//echo $rs;
