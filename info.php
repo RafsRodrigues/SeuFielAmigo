@@ -79,7 +79,7 @@ $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <div class="infos_pet_clock">
           <span><i class="uil uil-clock"></i> Publicado em:</span>
-          <span style="color:black;font-size:15px"><?php echo DateTime::createFromFormat('d/m/Y', $obj['dtLog']); ?></span>
+          <span style="color:black;font-size:15px"><?php echo date('d/m/Y', strtotime( $obj['dtLog'])); ?></span>
         </div>
   
       </div>
