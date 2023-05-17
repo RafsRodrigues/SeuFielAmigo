@@ -8,6 +8,8 @@ $(function () {
   if ($(".strPerfil").val() == "Administrador") {
     $(".linkAdm").show();
     $(".linkAdm").html('<a href="adm.php">Área do Administrador</a>');
+    preencheAnunciosAdm($("#strPedidos option:selected").val());
+    preencheUsuariosAdm();
   }
 
   $(".anunciosHidden").show();
@@ -15,8 +17,7 @@ $(function () {
   anuncioPrincipal($("#strEspecie option:selected").val(), $("#strPorte option:selected").val(), $("#strSexo option:selected").val(), $("#strEstadoPesquisa option:selected").val(), $("#strBairroPesquisa option:selected").val());
   comboEstado();
   preencheAnuncios();
-  preencheAnunciosAdm($("#strPedidos option:selected").val());
-  preencheUsuariosAdm();
+ 
 
   $('#btnPesquisar').click(function () {
     anuncioPrincipal($("#strEspecie option:selected").val(), $("#strPorte option:selected").val(), $("#strSexo option:selected").val(), $("#strEstadoPesquisa option:selected").val(), $("#strBairroPesquisa option:selected").val());
