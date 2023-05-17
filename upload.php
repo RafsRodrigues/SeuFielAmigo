@@ -9,7 +9,7 @@ $allowed = array('png', 'jpg', 'gif','zip','pdf');
         $file_size = $_FILES['file']['size'];
         $file_tmp_name = $_FILES['file']['tmp_name'];       
 
-        $destino = 'fotos/';
+        $destino = './fotos/';
 
         echo move_uploaded_file($file_tmp_name,$destino.$file_name);    
     }
