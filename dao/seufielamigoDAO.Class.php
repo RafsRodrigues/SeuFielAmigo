@@ -48,7 +48,7 @@ class consultaDAO
 
             $stmt = $this->pdo->query($sql);
 
-            $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $rs = $stmt->fetchAll(PDO::FETCH_OBJ);
 
             return $rs;
         } catch (PDOException $erro) {
@@ -122,7 +122,7 @@ class consultaDAO
             $stmt->bindValue(1, $email);
             $stmt->execute();
 
-            $usuario = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $usuario = $stmt->fetchAll(PDO::FETCH_OBJ);
 
             if ($usuario) {
                 if (password_verify($senha, $usuario[0]['strSenha'])) {
@@ -173,7 +173,7 @@ class consultaDAO
 
             $stmt = $this->pdo->query($sql);
 
-            $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $rs = $stmt->fetchAll(PDO::FETCH_OBJ);
 
             return $rs;
         } catch (PDOException $erro) {
@@ -191,7 +191,7 @@ class consultaDAO
 
             $stmt = $this->pdo->query($sql);
 
-            $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $rs = $stmt->fetchAll(PDO::FETCH_OBJ);
 
             return $rs;
         } catch (PDOException $erro) {
@@ -223,7 +223,7 @@ class consultaDAO
 
             $stmt = $this->pdo->query($sql);
 
-            $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $rs = $stmt->fetchAll(PDO::FETCH_OBJ);
 
             return $rs;
         } catch (PDOException $erro) {
@@ -295,7 +295,7 @@ class consultaDAO
 
             $stmt = $this->pdo->query($sql);
 
-            $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $rs = $stmt->fetchAll(PDO::FETCH_OBJ);
 
             return $rs;
         } catch (PDOException $erro) {

@@ -5,7 +5,7 @@ function comboEstado() {
         data: "action=carregaEstado",
         success: function (data) {
 
-            console.log(data);
+            // console.log(data);
             $.ajax({
                 type: 'POST',
                 url: 'tmp/comboEstado.php',
