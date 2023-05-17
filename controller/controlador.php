@@ -1,6 +1,7 @@
 <?php
-setlocale( LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8', 'portuguese' );
-date_default_timezone_set('Europe/Lisbon');
+setlocale(LC_ALL,'pt_BR.UTF8');
+mb_internal_encoding('UTF8'); 
+mb_regex_encoding('UTF8');
 
 extract($_POST);
 
