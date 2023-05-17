@@ -15,7 +15,7 @@ switch ($action) {
 
 
 			if (is_array($rs) || $rs == 'true' || $rs == '1') {
-				echo $rs;
+				echo utf8_encode(json_encode($rs));
 			} else {
 				header("HTTP/1.0 500 Internal Server Error");
 				//echo $rs;
