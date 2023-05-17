@@ -122,7 +122,7 @@ class consultaDAO
             $stmt->bindValue(1, $email);
             $stmt->execute();
 
-            $usuario = $stmt->fetchAll(PDO::FETCH_OBJ);
+            $usuario = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             if ($usuario) {
                 if (password_verify($senha, $usuario[0]['strSenha'])) {
