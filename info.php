@@ -25,7 +25,8 @@ if ($_SESSION) {
 }
 
 
-$sql = "SELECT * FROM cadastro_pet cp 
+$sql = "SELECT cp.numIdUser, numIdPet, strDescricao, strRaca, strIdade, strSexo, strPorte, strEstado, strBairro, DATE_FORMAT(cp.dtLog,'%d/%m/%Y') as dtLog, strEspecie,
+strTel, strImagem, strAprovacao FROM cadastro_pet cp 
 left join cadastro_user cu on cu.numIdUser = cp.numIdUser 
 left join bairro b on b.Codigo = cp.strBairro
 where numIdPet = " . $_GET['id'];
@@ -80,7 +81,7 @@ $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <div class="infos_pet_clock">
           <span><i class="uil uil-clock"></i> Publicado em:</span>
-          <span style="color:black;font-size:15px"><?php echo strftime("%d %B %Y", strtotime($obj['dtLog'])); ?></span>
+          <span style="color:black;font-size:15px"><?php echo $obj['dtLog']; ?></span>
         </div>
   
       </div>
