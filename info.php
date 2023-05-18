@@ -3,6 +3,7 @@ require_once("connection/conexao.php");
 $cn = new ConnectionFactory();
 $pdo = $cn->getConnect_seuFielAmigo();
 
+setlocale(LC_ALL, "pt_BR", "pt_BR.iso-8859-1", "pt_BR.utf-8", "portuguese");
 if (!isset($_SESSION)) {
   session_start();
 }
@@ -79,7 +80,7 @@ $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <div class="infos_pet_clock">
           <span><i class="uil uil-clock"></i> Publicado em:</span>
-          <span style="color:black;font-size:15px"><?php echo DateTime::CreateFromFormat('d-m-Y', $obj['dtLog']); ?></span>
+          <span style="color:black;font-size:15px"><?php echo strftime("%d %B %Y", strtotime($obj['dtLog'])); ?></span>
         </div>
   
       </div>
