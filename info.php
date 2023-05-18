@@ -26,7 +26,7 @@ if ($_SESSION) {
 
 
 $sql = "SELECT cp.numIdUser, numIdPet, strDescricao, strRaca, strIdade, strSexo, strPorte, strEstado, strBairro, DATE_FORMAT(cp.dtLog,'%d/%m/%Y') as dtLog, strEspecie,
-strTel, strImagem, strAprovacao FROM cadastro_pet cp 
+strTel, strImagem, strAprovacao, Nome, strEmail FROM cadastro_pet cp 
 left join cadastro_user cu on cu.numIdUser = cp.numIdUser 
 left join bairro b on b.Codigo = cp.strBairro
 where numIdPet = " . $_GET['id'];
